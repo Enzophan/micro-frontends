@@ -6,6 +6,8 @@ import { AuthorizedModule } from './modules/authorized/authorized.module';
 import { ProductsModule } from './modules/products/products.module';
 import { AppController } from './app.controller';
 import { AuthModule } from './auth/auth.module';
+import { CartModule } from './modules/cart/cart.module';
+
 import { UsersService } from './users/users.service';
 
 @Module({
@@ -18,6 +20,7 @@ import { UsersService } from './users/users.service';
     AuthorizedModule,
     ProductsModule,
     AuthModule,
+    CartModule
   ],
 })
 export class AppModule {}
