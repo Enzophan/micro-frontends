@@ -8,7 +8,7 @@ import Header from 'home/Header'
 import Footer from 'home/Footer'
 import PDPContent from "./PDPContent";
 
-
+import "remixicon/fonts/remixicon.css";
 import "./index.scss";
 
 const App = () => {
