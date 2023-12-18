@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useLoggedIn } from './cart'
+import { login, useLoggedIn } from './cart'
 
 function Login() {
     const loggedIn = useLoggedIn();
@@ -7,7 +7,7 @@ function Login() {
     const [username, setUsername] = useState("maria");
     const [password, setPassword] = useState("123");
 
-    if (!loggedIn) return null;
+    if (loggedIn) return null;
 
     return (
         <>
@@ -22,7 +22,25 @@ function Login() {
                         top: "2rem"
                     }}
                 >
-
+                    <input type="text"
+                        placeholder="Username"
+                        value={username}
+                        onChange={(evt) => setUsername(evt.target.value)}
+                        className="border text-sm border-gray-400 p-2 rounded-md w-full"
+                    />
+                    <input
+                        type="password"
+                        value={password}
+                        onChange={(evt) => setPassword(evt.target.value)}
+                        className="border text-sm border-gray-400 p-2 rounded-md w-full mt-3"
+                    />
+                    <button
+                        className="bg-green-900 text-white py-2 px-5 rounded-md text-sm mt-5"
+                        onClick={() => login(username, password)}
+                        id="loginbtn"
+                    >
+                        Login
+                    </button>
                 </div>
             )}
         </>
