@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // import SafeComponent from "./SafeComponent";
 import Header from 'home/Header'
@@ -27,9 +27,9 @@ const App = () => {
 
         <Header />
         <div className="my-10">
-          <Routes>
-            <Route path="/product/:id" element={<PDPContent />} />
-          </Routes>
+          <Switch>
+            <Route path="/product/:id" component={<PDPContent />} />
+          </Switch>
         </div>
         <Footer />
       </div>
